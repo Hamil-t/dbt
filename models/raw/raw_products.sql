@@ -1,0 +1,14 @@
+
+{{
+    config(materialized='table')
+}}
+
+SELECT
+    C1 AS CATEGORY,
+    C2 AS PRODUCTID,
+    C3 AS PRODUCTNAME,
+    C4 AS SUBCATEGORY
+
+FROM RAW.GLOBALMART.PRODUCTS
+
+WHERE UPPER(TRIM(C1)) <> 'CATEGORY'

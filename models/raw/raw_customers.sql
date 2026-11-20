@@ -1,0 +1,14 @@
+{{
+    config(materialized='table')
+}}
+
+SELECT
+    C1 AS CUSTOMERID,
+    C2 AS CUSTOMERNAME,
+    C3 AS SEGMENT,
+    C4 AS COUNTRY,
+    C5 AS State
+
+FROM RAW.GLOBALMART.CUSTOMERS
+
+WHERE UPPER(TRIM(C1)) <> 'CUSTOMERID'
